@@ -10,9 +10,12 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-gray-50 min-h-screen flex flex-col">
         <Navbar />
-        <main>{children}</main>
+        {/* Main content wrapper with padding and max width */}
+        <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
