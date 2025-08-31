@@ -70,7 +70,12 @@ export default function FeedbackPage() {
         </div>
 
         <div style={{ marginTop: '10px' }}>
-          <ImageUpload onImageChange={(img: string) => setImage(img)} />
+          <ImageUpload
+  onImageChange={(base64: string | null, detectedIngredients?: string[]) => {
+    if (base64) setImage(base64);
+  }}
+/>
+
          {image && typeof image === 'string' && (
   <Image
     src={image}
