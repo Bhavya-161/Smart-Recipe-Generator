@@ -24,14 +24,15 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify({
         model: "gpt-4o-mini",
         messages: [
-          {
-            role: "user",
-            content: [
-              { type: "text", text: "List all visible food ingredients in this image, comma-separated, no extra text." },
-              { type: "image_url", image_url: { url: `data:image/png;base64,${base64Image}` } }
-            ]
-          }
-        ]
+  {
+    role: "user",
+    content: [
+      { type: "text", text: "List all visible food ingredients in this image, comma-separated, no extra text." },
+      { type: "image_url", image_url: { url: imageUrlFromCloud } }
+    ]
+  }
+]
+
       })
     });
 
