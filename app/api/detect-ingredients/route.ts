@@ -39,7 +39,11 @@ export async function POST(req: NextRequest) {
 
     const data = await completion.json();
     const text = data.choices?.[0]?.message?.content || "";
-    const ingredients = text.split(",").map(i => i.trim().toLowerCase()).filter(Boolean);
+    const ingredients = text
+  .split(",")
+  .map((i: string) => i.trim().toLowerCase())
+  .filter(Boolean);
+
 
     return NextResponse.json({ ingredients });
 
