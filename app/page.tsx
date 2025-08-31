@@ -56,7 +56,10 @@ export default function HomePage() {
     if (difficulty !== 'All') filtered = filtered.filter(r => r.difficulty === difficulty);
     if (calorie.trim()) filtered = filtered.filter(r => r.calories !== undefined && r.calories <= Number(calorie));
 if (timeLimit.trim()) {
-  filtered = filtered.filter(r => (r.time as number) !== undefined && (r.time as number) <= Number(timeLimit));
+  const maxTime = Number(timeLimit);
+  filtered = filtered.filter(
+    r => r.time !== undefined && r.time <= maxTime
+  );
 }
 
 
