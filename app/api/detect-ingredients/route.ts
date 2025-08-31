@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
+   console.log("OPENAI_API_KEY =", process.env.OPENAI_API_KEY);
   try {
     const { base64Image } = await req.json();
 
