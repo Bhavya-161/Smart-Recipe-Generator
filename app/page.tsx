@@ -58,7 +58,7 @@ export default function HomePage() {
 if (timeLimit.trim()) {
   const maxTime = Number(timeLimit);
   filtered = filtered.filter(
-    r => r.time !== undefined && r.time <= maxTime
+    r => r.cookTime !== undefined && r.cookTime <= maxTime
   );
 }
 
