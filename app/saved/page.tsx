@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Recipe } from '../../lib/types';
 import recipesData from '../../data/recipes.json';
+import Image from 'next/image';
 
 export default function SavedPage() {
   const [savedRecipes, setSavedRecipes] = useState<Recipe[]>([]);
@@ -41,11 +42,15 @@ export default function SavedPage() {
             <p>{recipe.description}</p>
 
 {recipe.image && typeof recipe.image === 'string' && (
-  <img
-    src={recipe.image}   // use exactly what’s in JSON
-    alt={recipe.title || 'Recipe Image'}
-    className="w-full h-48 object-cover rounded mb-3"
-  />
+  
+
+<Image
+  src={recipe.image}
+  alt="Recipe"
+  width={200}
+  height={200}
+/>
+
 )}
 
 
